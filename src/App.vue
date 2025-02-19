@@ -13,7 +13,7 @@ import request from './utils/request';
 import { onMounted } from 'vue';
 onMounted(()=>{
   request.get('/hosp/hospital/1/10').then((res)=>{
-    console.log("APP组件",res);
+    console.log("APP组件---",res.data);
   });
 });
 
