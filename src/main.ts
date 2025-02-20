@@ -7,6 +7,7 @@ import router from './router'
 import ElementPlus from 'element-plus'
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import pinia from '@/store';
 import 'element-plus/dist/index.css'
 
 const app = createApp(App);
@@ -16,5 +17,6 @@ app.use(router);
 app.use(ElementPlus,{
     locale:zhCn,
 });
+app.use(pinia);
 app.mount('#app');
 
