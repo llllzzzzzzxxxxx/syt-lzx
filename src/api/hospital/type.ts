@@ -41,3 +41,12 @@ export interface HosPitalDetail{
 export interface HospitalDetail extends ResponseData{
     data:HosPitalDetail
 }
+export interface Department{
+    depcode:string,
+    depname:string,
+    children?:Department[]
+}
+export type DepartmentArr = Department[];
+export interface DepartmentResponseData extends ResponseData{
+    data:DepartmentArr
+}

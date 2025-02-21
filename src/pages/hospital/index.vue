@@ -29,7 +29,7 @@
       </el-menu>
         </div>
         <div class="content">
-            
+          <router-view></router-view>
         </div>
     </div>
 </template>
@@ -37,11 +37,18 @@
 <script setup lang="ts">
 import { Document,Menu as IconMenu ,Setting ,InfoFilled,Search,HomeFilled } from '@element-plus/icons-vue';
 import {useRouter,useRoute} from 'vue-router';
+import {onMounted} from 'vue';
+import useDetailStore from '@/store/modules/hospitalDetail';
 
 let $router = useRouter();
 let $route = useRoute();
+let detailStore = useDetailStore();
+onMounted(()=>{
+    detailStore.getHospital($route.query.hoscode as string);
+    detailStore.getDepartment($route.query.hoscode as string);
+})
 const changeActive = (path:string)=>{
-    $router.push({path})
+    $router.push({path,query:{hoscode:$route.query.hoscode}});
 }
 </script>
 
