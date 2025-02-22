@@ -29,7 +29,8 @@
                 <div>挂号规则</div>
                 <div class="time">
                     预约周期:10天
-                    放号时间:{{ hospitalStore.hospitalInfo.bookingRule?.releaseTime }}停挂时间:{{ hospitalStore.hospitalInfo.bookingRule?.stopTime }}
+                    放号时间:{{ hospitalStore.hospitalInfo.bookingRule?.releaseTime }}停挂时间:{{
+                        hospitalStore.hospitalInfo.bookingRule?.stopTime }}
                 </div>
                 <div class="address">
                     具体时间:{{ hospitalStore.hospitalInfo.hospital?.param.fullAddress }}
@@ -50,7 +51,8 @@
             <div class="leftNav">
                 <ul>
                     <li @click="changeIndex(index)" v-for="(department, index) in hospitalStore.departmentArr"
-                        :key="department.depcode" :class="{ active: index === currentIndex }">{{ department.depname }}</li>
+                        :key="department.depcode" :class="{ active: index === currentIndex }">{{ department.depname }}
+                    </li>
                 </ul>
             </div>
             <div class="departmentInfo">
@@ -77,7 +79,7 @@ const changeIndex = (index: number) => {
     currentIndex.value = index
     let allH1 = document.querySelectorAll('.cur');
     allH1[currentIndex.value].scrollIntoView({
-        behavior:'smooth'
+        behavior: 'smooth'
     });
 }
 
@@ -138,6 +140,7 @@ const changeIndex = (index: number) => {
             }
         }
     }
+
     .department {
         width: 100%;
         height: 500px;
@@ -172,14 +175,17 @@ const changeIndex = (index: number) => {
                 }
             }
         }
+
         .departmentInfo {
             flex: 1;
             margin-left: 20px;
             height: 100%;
             overflow: auto;
-            &::-webkit-scrollbar{
+
+            &::-webkit-scrollbar {
                 display: none;
             }
+
             .showDepartment {
                 h1 {
                     background: rgb(248, 248, 248);
