@@ -92,6 +92,10 @@ const login = () => {
 
             .help {
                 margin-right: 10px;
+                cursor: pointer;
+            }
+            .login {
+                cursor: pointer;
             }
         }
     }

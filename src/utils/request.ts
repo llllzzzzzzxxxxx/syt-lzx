@@ -1,6 +1,5 @@
 // 对于axios函数库进行二次封装
 import axios from 'axios';
-import { ElMessage } from 'element-plus';
 //利用axios.create方法创建一个axios实例:可以设置基础路径、超时的时间的设置
 //日的1:利用axios请求、响应拦截器功能
 //目的2:请求拦截器,一般可以在请求头中携带公共的参数:token
@@ -23,22 +22,13 @@ request.interceptors.response.use((response)=>{
     let status = error.response.status;
     switch(status){
         case 404:
-            ElMessage({
-                type:'error',
-                message:error.message,
-            })
+            
             break;
         case 503|501|502|503|504|505:
-            ElMessage({
-                type:'error',
-                message:'服务器挂了'
-            })
+            
             break;
         case 402:
-            ElMessage({
-                type:'error',
-                message:'参数有误'
-            })
+            
             break;
     }
     return Promise.reject(new Error(error.message));

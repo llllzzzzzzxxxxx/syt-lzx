@@ -4,6 +4,7 @@ import '@/style/reset.scss'
 import HospitalTop from '@/components/hospital_top/index.vue'
 import HospitalBottom from '@/components/hospital_bottom/index.vue'
 import Login from'@/components/login/index.vue'
+
 import router from './router'
 import ElementPlus from 'element-plus'
 // @ts-ignore
